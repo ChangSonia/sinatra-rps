@@ -9,7 +9,7 @@ end
 
 # Play rock
 get("/rock") do
-  moves = ["rock","paper","scissor"]
+  moves = ["rock","paper","scissors"]
   @opponent = moves.sample
   if @opponent == "rock"
     @outcome = "tied"
@@ -24,11 +24,11 @@ end
 
 # Play paper
 get("/paper") do
-  moves = ["rock","paper","scissor"]
+  moves = ["rock","paper","scissors"]
   @opponent = moves.sample
   if @opponent == "paper"
     @outcome = "tied"
-  elsif @opponent == "scissor"
+  elsif @opponent == "scissors"
     @outcome = "lost"
   else
     @outcome = "won"
@@ -37,16 +37,16 @@ get("/paper") do
 end
 
 
-# Play scissor
-get("/scissor") do
-  moves = ["rock","paper","scissor"]
+# Play scissors
+get("/scissors") do
+  moves = ["rock","paper","scissors"]
   @opponent = moves.sample
-  if @opponent == "scissor"
+  if @opponent == "scissors"
     @outcome = "tied"
   elsif @opponent == "rock"
     @outcome = "lost"
   else
     @outcome = "won"
   end
-  erb(:scissor,{:layout => :wrapper})
+  erb(:scissors,{:layout => :wrapper})
 end
